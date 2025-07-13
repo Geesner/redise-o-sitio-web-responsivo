@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rediseño Responsivo - Ejemplo de Página Web No Adaptable</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilo para ocultar visualmente un elemento, pero mantenerlo accesible para lectores de pantalla */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="main-header">
+            <div class="site-title">
+                <h1>EJEMPLO DE PÁGINA WEB NO ADAPTABLE</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" aria-label="Alternar navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <main class="main-content-area">
+            <section class="content-section">
+                <h2 class="sr-only">Contenido Principal del Sitio</h2>
+                <article>
+                    <h2>Primer Título para Bloque de Contenido</h2>
+                    <p>Este es un texto de ejemplo que sirve para rellenar el espacio y mostrar cómo se vería el contenido en esta sección. Es importante tener un texto de prueba para visualizar el flujo y la apariencia general del párrafo, incluso si el contenido final es diferente. Lorem ipsum es comúnmente usado, pero aquí usamos español para la validación.</p>
+                    <img src="https://via.placeholder.com/600x300/CCCCCC/808080?text=Imagen+1" alt="Imagen de Marcador de Posición 1">
+                    <p>Continuamos con más texto de ejemplo para asegurar que el diseño del párrafo y las imágenes se adapten correctamente al espacio disponible. La adaptabilidad es clave para una buena experiencia de usuario en cualquier dispositivo, y estos bloques de texto nos ayudan a simular eso de manera efectiva.</p>
+                </article>
+                <article>
+                    <h2>Segundo Título para Otro Bloque</h2>
+                    <p>Este bloque de texto demuestra cómo se organizaría el contenido secundario o adicional dentro de la estructura principal. La legibilidad y la claridad son fundamentales, y el uso de párrafos y encabezados ayuda a organizar la información de forma accesible. Así, cada sección tiene un propósito claro.</p>
+                    <img src="https://via.placeholder.com/600x300/DDDDDD/808080?text=Imagen+2" alt="Imagen de Marcador de Posición 2">
+                    <p>Finalmente, este texto de relleno permite evaluar la separación entre bloques de contenido y cómo el diseño se comporta con diferentes cantidades de texto. Un buen diseño responsivo se ajusta dinámicamente, asegurando que el contenido sea siempre fácil de consumir, sin importar el tamaño de la pantalla del usuario.</p>
+                </article>
+                <article>
+                    <h2>Último Título de Contenido</h2>
+                    <p>Este es el último párrafo de ejemplo para completar la sección principal. Se asegura de que todos los elementos de texto y estructura estén correctamente alineados y espaciados, proporcionando un aspecto profesional y limpio en todas las resoluciones. Un buen diseño considera cada detalle visual.</p>
+                </article>
+            </section>
+
+            <aside class="sidebar">
+                <section class="related-links">
+                    <h3>Enlaces Relacionados</h3>
+                    <ul>
+                        <li><a href="#">Elemento de Enlace Uno</a></li>
+                        <li><a href="#">Elemento de Enlace Dos</a></li>
+                        <li><a href="#">Elemento de Enlace Tres</a></li>
+                        <li><a href="#">Elemento de Enlace Cuatro</a></li>
+                    </ul>
+                </section>
+                <section class="recent-news">
+                    <h3>Noticias Recientes</h3>
+                    <ul>
+                        <li><a href="#">Titular de Noticia 1</a></li>
+                        <li><a href="#">Titular de Noticia 2</a></li>
+                        <li><a href="#">Titular de Noticia 3</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2025 EJEMPLO DE PÁGINA WEB NO ADAPTABLE. Todos los derechos reservados.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#privacidad">Política de Privacidad</a></li>
+                    <li><a href="#terminos">Términos de Uso</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+    </div> <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const nav = document.querySelector('.main-nav');
+
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

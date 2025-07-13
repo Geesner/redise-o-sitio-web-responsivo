@@ -1,0 +1,296 @@
+/* Estilos Generales y Reseteo Básico */
+* {
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto total del elemento */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Un fondo suave para la página */
+}
+
+a {
+    color: #007bff; /* Color de enlace por defecto */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%; /* Las imágenes nunca se desbordarán de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacio extra debajo de las imágenes */
+    margin-bottom: 1em; /* Espacio debajo de las imágenes */
+}
+
+/* Contenedor Principal (para centrar y limitar el ancho) */
+.container {
+    max-width: 1200px; /* Ancho máximo para el contenido en pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Espaciado interno para que el contenido no toque los bordes */
+    background-color: #fff; /* Fondo blanco para el contenido principal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle profundidad */
+}
+
+/* Cabecera Principal */
+.main-header {
+    display: flex; /* Usa Flexbox para alinear elementos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: space-between; /* Espacia el título y la navegación */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Línea divisoria */
+}
+
+.site-title h1 {
+    font-size: 2.2em; /* Tamaño del título del sitio */
+    color: #333;
+    margin: 0;
+}
+
+/* Navegación Principal */
+.main-nav ul {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex; /* Usa Flexbox para los elementos de la lista */
+    gap: 20px; /* Espacio entre los elementos del menú */
+}
+
+.main-nav a {
+    display: block;
+    padding: 8px 15px;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transición suave para el hover */
+}
+
+.main-nav a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Menú Hamburguesa (oculto por defecto en desktop) */
+.hamburger-menu {
+    display: none; /* Oculto en vista de escritorio */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Contenido Principal y Barra Lateral (Layout de 2 columnas en desktop) */
+.main-content-area {
+    display: flex; /* Usa Flexbox para las dos columnas */
+    gap: 30px; /* Espacio entre la sección de contenido y la barra lateral */
+    margin-bottom: 30px;
+}
+
+.content-section {
+    flex: 3; /* Ocupa 3 partes del espacio disponible (aprox. 70%) */
+    min-width: 0; /* Permite que el contenido se encoja correctamente */
+}
+
+.content-section article {
+    margin-bottom: 2em; /* Espacio entre artículos */
+}
+
+.content-section h2 {
+    font-size: 1.8em;
+    color: #444;
+    margin-bottom: 0.5em;
+}
+
+.content-section p {
+    margin-bottom: 1em;
+}
+
+.sidebar {
+    flex: 1; /* Ocupa 1 parte del espacio disponible (aprox. 30%) */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-left: 1px solid #eee; /* Borde para separar visualmente */
+}
+
+.sidebar h3 {
+    font-size: 1.4em;
+    color: #444;
+    margin-bottom: 1em;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 1.5em;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5em;
+}
+
+.sidebar ul li a {
+    color: #555;
+}
+
+.sidebar ul li a:hover {
+    color: #007bff;
+}
+
+/* Pie de Página */
+.main-footer {
+    border-top: 1px solid #eee; /* Línea divisoria */
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.main-footer p {
+    margin-bottom: 10px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-nav a {
+    color: #777;
+}
+
+.footer-nav a:hover {
+    color: #007bff;
+}
+
+/* ======================================================= */
+/* MEDIA QUERIES - Para hacer el diseño Responsivo */
+/* ======================================================= */
+
+/* Para Tablets (ej. Anchos entre 768px y 991px) */
+@media (max-width: 991px) {
+    .container {
+        padding: 15px; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .main-header {
+        flex-direction: column; /* Apila el título y la navegación */
+        align-items: flex-start; /* Alinea a la izquierda */
+    }
+
+    .site-title {
+        margin-bottom: 15px; /* Espacio entre título y navegación */
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap; /* Permite que los elementos de navegación se envuelvan */
+        justify-content: center; /* Centra los elementos del menú */
+        gap: 10px; /* Reduce el espacio entre elementos */
+    }
+
+    .main-content-area {
+        flex-direction: column; /* Apila las columnas (contenido y sidebar) */
+        gap: 20px; /* Reduce el espacio entre las secciones apiladas */
+    }
+
+    .sidebar {
+        border-left: none; /* Quita el borde izquierdo */
+        border-top: 1px solid #eee; /* Añade un borde superior para separar */
+    }
+}
+
+/* Para Móviles (ej. Anchos menores a 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 10px; /* Más padding reducido para móviles */
+    }
+
+    .main-header {
+        flex-direction: row; /* Vuelve a poner el título y la hamburguesa en fila */
+        justify-content: space-between; /* Espacia el título y la hamburguesa */
+        align-items: center;
+    }
+
+    .site-title h1 {
+        font-size: 1.8em; /* Reduce el tamaño del título para móvil */
+    }
+
+    .main-nav {
+        display: none; /* Oculta la navegación principal por defecto */
+        flex-direction: column; /* Para el menú desplegable */
+        width: 100%; /* Ocupa todo el ancho cuando está activo */
+        background-color: #fff; /* Fondo para el menú desplegable */
+        position: absolute; /* Posiciona el menú sobre el contenido */
+        top: 80px; /* Ajusta según la altura de tu header */
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .main-nav.active {
+        display: flex; /* Muestra la navegación cuando está activa */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Apila los enlaces del menú */
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        text-align: center;
+        margin: 0;
+    }
+
+    .main-nav a {
+        padding: 12px 0; /* Aumenta el padding para facilitar el toque */
+        border-bottom: 1px solid #eee; /* Línea entre elementos del menú */
+    }
+
+    .main-nav ul li:last-child a {
+        border-bottom: none; /* Quita el borde del último elemento */
+    }
+
+    .hamburger-menu {
+        display: block; /* Muestra el botón de hamburguesa en móvil */
+    }
+
+    /* Animación del botón hamburguesa */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .content-section h2 {
+        font-size: 1.5em; /* Reduce el tamaño de los títulos de contenido */
+    }
+
+    .sidebar {
+        padding: 15px; /* Reduce el padding de la barra lateral */
+    }
+
+    .footer-nav ul {
+        flex-direction: column; /* Apila los enlaces del footer */
+        gap: 5px;
+    }
+}
